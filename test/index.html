@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="halo-toggle test page">
+    <title>Selection Controls Test</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Toggle Test">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Toggle Test">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#37474F">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="//rawgit.com/suitcss/base/master/lib/base.css">
+    <link rel="stylesheet" type="text/css" href="//rawgit.com/suitcss/components-test/master/lib/test.css">
+    <!-- <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin' rel='stylesheet' type='text/css'> -->
+    <style type="text/css">
+    html,
+    body {
+        color: #444;
+        font-family: 'Open Sans', sans-serif;
+        width: auto;
+        margin: 5px;
+    }
+
+    input[type=text] {
+        height: 40px;
+    }
+
+    .Test-run--dark {
+        background-color: #424242;
+    }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Test">
+        <h1 class="Test-title">Halo: <a href="https://github.com/hugomrdias/halo-switch">Selection controls</a> component tests</h1>
+        <h2 class="Test-describe">.Switch</h2>
+        <h3 class="Test-it">Base</h3>
+        <div class="Test-run" id="a">
+            <div class="Switch">
+                <input type="checkbox" id="switch" class="Switch-checkbox" hidden="hidden">
+                <label for="switch" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch">
+                <input type="checkbox" id="switch-on" class="Switch-checkbox" hidden="hidden" checked="checked">
+                <label for="switch-on" class="Switch-thumb"></label>
+            </div>
+            <input type="checkbox" />
+        </div>
+        <h3 class="Test-it">Focus indication <small>needs tabindex = 0 on the label</small></h3>
+        <div class="Test-run" id="a">
+            <div class="Switch">
+                <input type="checkbox" id="switch-focus" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-focus" class="Switch-thumb" tabindex="0"> </label>
+            </div>
+        </div>
+        <h3 class="Test-it">Disabled with class modifier and html prop</h3>
+        <div class="Test-run" id="a">
+            <div class="Switch">
+                <input type="checkbox" id="switch-disabled" class="Switch-checkbox" hidden="hidden" disabled="disabled">
+                <label for="switch-disabled" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch ">
+                <input type="checkbox" id="switch-disabled-on" class="Switch-checkbox" hidden="hidden" checked="checked" disabled="disabled">
+                <label for="switch-disabled-on" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch Switch--disabled">
+                <input type="checkbox" id="switch-disabled-class" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-disabled-class" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch Switch--disabled">
+                <input type="checkbox" id="switch-disabled-on-class" class="Switch-checkbox" hidden="hidden" checked="checked">
+                <label for="switch-disabled-on-class" class="Switch-thumb"></label>
+            </div>
+        </div>
+        <h3 class="Test-it">Label Left</h3>
+        <div class="Test-run" id="b">
+            <div class="Switch">
+                <label class="Switch-label" for="switch-left">Sound off/on</label>
+                <input type="checkbox" id="switch-left" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-left" class="Switch-thumb"></label>
+            </div>
+        </div>
+        <h3 class="Test-it">Label Right</h3>
+        <div class="Test-run" id="c">
+            <div class="Switch">
+                <input type="checkbox" id="switch-right" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-right" class="Switch-thumb"></label>
+                <label class="Switch-label" for="switch-right"> Sound off/on </label>
+            </div>
+            <input type="text" value="cenas"></input>
+            </input>
+        </div>
+        <h3 class="Test-it">Base dark</h3>
+        <div class="Test-run Test-run--dark" id="d">
+            <div class="Switch Switch--dark">
+                <input type="checkbox" id="switch-dark-off" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-dark-off" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch Switch--dark">
+                <input type="checkbox" id="switch-dark-on" class="Switch-checkbox" hidden="hidden" checked="checked">
+                <label for="switch-dark-on" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch Switch--dark Switch--disabled">
+                <input type="checkbox" id="switch-dark-disabled-class" class="Switch-checkbox" hidden="hidden">
+                <label for="switch-dark-disabled-class" class="Switch-thumb"></label>
+            </div>
+            <div class="Switch Switch--dark">
+                <input type="checkbox" id="switch-dark-disabled" class="Switch-checkbox" hidden="hidden" disabled="disabled">
+                <label for="switch-dark-disabled" class="Switch-thumb"></label>
+            </div>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+    <script src="script.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+    <script type="text/javascript">
+    // HTMLInspector.inspect()
+    </script>
+</body>
+
+</html>

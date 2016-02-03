@@ -1,0 +1,152 @@
+.Switch {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+}
+
+.Switch-label {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: baseline;
+    outline: 0;
+}
+
+.Switch-thumb {
+    display: inline-block;
+    position: relative;
+    vertical-align: text-top;
+    width: 36px;
+    height: 14px;
+    margin: 0 5px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.26);
+    transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: 0;
+}
+
+
+/*
+top calc: -(thumb height - track height) / 2
+checked offset: track width - thumb width
+*/
+
+.Switch-thumb::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Switch-thumb:focus::before,
+.Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(128, 128, 128, 0.1);
+}
+
+.Switch-checkbox:checked + .Switch-thumb {
+    background: rgba(0, 150, 136, 0.5);
+}
+
+.Switch-checkbox:checked + .Switch-thumb::before {
+    left: 16px;
+    background: #009688;
+}
+
+.Switch-checkbox:checked + .Switch-thumb:focus::before,
+.Switch-checkbox:checked + .Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(0, 150, 136, 0.1);
+}
+
+
+/*
+    Disabled modifier
+ */
+
+.Switch-checkbox:disabled + .Switch-thumb,
+.Switch--disabled .Switch-thumb,
+.Switch-checkbox:checked:disabled + .Switch-thumb,
+.Switch--disabled .Switch-checkbox:checked + .Switch-thumb {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.Switch-checkbox:disabled + .Switch-thumb::before,
+.Switch--disabled .Switch-thumb::before,
+.Switch-checkbox:checked:disabled + .Switch-thumb::before,
+.Switch--disabled .Switch-checkbox:checked + .Switch-thumb::before {
+    background: #bdbdbd;
+}
+
+.Switch--disabled .Switch-checkbox:checked + .Switch-thumb:focus::before,
+.Switch--disabled .Switch-checkbox:checked + .Switch-thumb:active::before,
+.Switch-checkbox:checked:disabled + .Switch-thumb:focus::before,
+.Switch-checkbox:checked:disabled + .Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(128, 128, 128, 0.1);
+}
+
+
+/*
+    Dark background modifier
+ */
+
+.Switch--dark .Switch-thumb {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.Switch--dark .Switch-thumb::before {
+    background: #bdbdbd;
+}
+
+.Switch--dark .Switch-thumb:focus::before,
+.Switch--dark .Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+.Switch--dark .Switch-checkbox:checked + .Switch-thumb {
+    background: rgba(128, 203, 196, 0.5);
+}
+
+.Switch--dark .Switch-checkbox:checked + .Switch-thumb::before {
+    background: rgba(128, 203, 196, 1);
+}
+
+.Switch--dark .Switch-checkbox:checked + .Switch-thumb:focus::before,
+.Switch--dark .Switch-checkbox:checked + .Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(128, 203, 196, 0.1);
+}
+
+
+/*
+    dark and disabled
+ */
+
+.Switch--dark .Switch-checkbox:disabled + .Switch-thumb,
+.Switch--dark.Switch--disabled .Switch-thumb,
+.Switch--dark .Switch-checkbox:checked:disabled + .Switch-thumb,
+.Switch--dark.Switch--disabled .Switch-checkbox:checked + .Switch-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.Switch--dark .Switch-checkbox:disabled + .Switch-thumb::before,
+.Switch--dark.Switch--disabled .Switch-thumb::before,
+.Switch--dark .Switch-checkbox:checked:disabled + .Switch-thumb::before,
+.Switch--dark.Switch--disabled .Switch-checkbox:checked + .Switch-thumb::before {
+    background: #424242;
+}
+
+.Switch--dark.Switch--disabled .Switch-checkbox:checked + .Switch-thumb:focus::before,
+.Switch--dark.Switch--disabled .Switch-checkbox:checked + .Switch-thumb:active::before,
+.Switch--dark .Switch-checkbox:checked:disabled + .Switch-thumb:focus::before,
+.Switch--dark .Switch-checkbox:checked:disabled + .Switch-thumb:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 14px rgba(255, 255, 255, 0.1);
+}
