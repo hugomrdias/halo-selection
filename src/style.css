@@ -12,14 +12,14 @@
 .Switch-label {
     display: inline-block;
     cursor: pointer;
-    vertical-align: baseline;
+    vertical-align: middle;
     outline: 0;
 }
 
 .Switch-thumb {
     display: inline-block;
     position: relative;
-    vertical-align: text-top;
+    vertical-align: middle;
     width: 36px;
     height: 14px;
     margin: 0 5px;
